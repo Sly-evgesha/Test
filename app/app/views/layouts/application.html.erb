@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css' %>
+    <link href="grid.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <h5 class="my-0 mr-md-auto font-weight-bold">My wep-application</h5>
+        <ul>
+              <l1><%= link_to "auth/facebook" do %><%= image_tag('face.png', width: '50', height: '50', class: 'img-circle') %><% end %></l1>
+              <l1><%= link_to "auth/github" do %><%= image_tag('github.png', width: '40', height: '40', class: 'img-circle') %><% end %></l1>
+              <l1><%= link_to "auth/vkontakte" do %><%= image_tag('vk.png', width: '40', height: '40', class: 'img-circle') %><% end %></l1>
+        </ul>
+      </div>
+    <div class="container">
+
+    <% flash.each do |key, value| %>
+      <div class="alert alert-info"><%= value %></div>
+    <% end %>
+
+    <%= yield %>
+    </div>
+  </body>
+</html>

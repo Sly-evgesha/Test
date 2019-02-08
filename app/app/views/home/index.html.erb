@@ -1,0 +1,24 @@
+  <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <% if current_user %>
+        <th scope="col">name:</th>
+        <th scope="col">provider:</th>
+        <th scope="col">created_at:</th>
+        <th scope="col">updated_at:</th>
+        <th scope="col">order:</th>
+      <% end %>
+    </tr>
+  </thead>
+  <thead class="thead">
+    <tr>
+      <% if current_user %>
+        <th scope="col"><%= current_user.name %></th>
+        <th scope="col"><%= current_user.provider %></th>
+        <th scope="col"><%= current_user.created_at %></th>
+        <th scope="col"><%= current_user.updated_at %></th>
+        <th scope="col"><%= link_to "sign out", 'sign_out', method: :delete %></th>
+      <% end %>
+    </tr>
+  </thead>
+  </table>
